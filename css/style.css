@@ -1,0 +1,32 @@
+.jumbotron {
+  margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  background: #000064;  /* old browsers fallback color*/
+  background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2); 
+  background: linear-gradient(to right, #f2fcfe, #1c92d2);
+}
+
+.bg-light {
+  background: #000064;  /* old browsers fallback color*/
+  background: -webkit-linear-gradient(to top, #f2fcfe, #1c92d2); 
+  background: linear-gradient(to top, #f2fcfe, #1c92d2);
+}
+
+.bg-blue {
+  background-color: #1c92d2;
+}
+
+.img-control {
+  max-height: 350px;
+}
+
+.container {
+  background-color: #000;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+
