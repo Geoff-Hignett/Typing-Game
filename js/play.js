@@ -5,12 +5,12 @@ window.addEventListener('load', init);
 // Available Levels
 const levels = {
   easy: 5,
-  medium: 3,
-  hard: 1
+  medium: 4,
+  hard: 3
 };
 
 // To change level
-const currentLevel = levels.easy;
+let currentLevel = levels.easy;
 
 let time = 30;
 let score = 0;
@@ -22,8 +22,10 @@ const currentWord = document.querySelector('#current-word');
 const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
-const seconds = document.querySelector('#seconds');
+let seconds = document.querySelector('#seconds');
 const retry = document.querySelector("#retry");
+const difficulty = document.querySelector("#difficulty");
+const timer = document.querySelectorAll(".timer");
 
 let words = [
   'hat',
@@ -35,11 +37,30 @@ let words = [
   'cocktail',
   'runaway',
   'joke',
+  'dogs',
+  'look',
+  'eat',
+  'stew',
+  'switch',
+  'brim',
+  'pot',
+  'by',
+  'in',
   'developer',
   'hero',
   'javascript',
   'nutrition',
   'revolver',
+  'find',
+  'swim',
+  'detail',
+  'measure',
+  'a',
+  'an',
+  'suit',
+  'army',
+  'planned',
+  'mirror',
   'echo',
   'siblings',
   'investigate',
@@ -65,7 +86,19 @@ const level2 = [
   'infrastructure',
   'methodology',
   'promulgate',
-  'xenophobia'
+  'anthropological',
+  'complementation',
+  'broadmindedness',
+  'commensurations',
+  'determinateness',
+  'efficaciousness',
+  'discombobulates',
+  'antifundamentalist',
+  'agammaglobulinemic',
+  'internationalities',
+  'organophosphoruses',
+  'reconstructionisms',
+  'puzzleheadednesses'
 ];
 
 // Initialize Game
@@ -91,7 +124,7 @@ function startMatch() {
     wordInput.value = '';
     score++;
     // Check score for difficulty increase
-    if (score === 15) {
+    if (score === 10) {
       increaseDifficulty();
     }
   }
@@ -135,7 +168,17 @@ function countdown() {
   }
   // Show time
   timeDisplay.innerHTML = time;
+  // Change timer color
+  if (time > 2) {
+    timeDisplay.style.color = "#66FF00";
+  } else if (time === 2) {
+    timeDisplay.style.color = "#ffcc33";
+  } else {
+    timeDisplay.style.color = "#fd0e35";
+  }
 }
+
+
 
 // Check game status
 function checkStatus() {
@@ -152,6 +195,25 @@ function increaseDifficulty() {
   words = words.filter(word => word.length > 8);
   Array.prototype.push.apply(words, level2);
   console.log(words);
+}
+
+//Set difficulty level
+function setDifficulty() {
+  let difficultyLevel = difficulty.value;
+  switch (difficultyLevel) {
+    case "0":
+      currentLevel = levels.easy;
+      seconds.innerHTML = 5;
+      break;
+    case "1":
+      currentLevel = levels.medium;
+      seconds.innerHTML = 4;
+      break;
+    case "2":
+      currentLevel = levels.hard;
+      seconds.innerHTML = 3;
+      break;
+  }
 }
 
 // Restart game

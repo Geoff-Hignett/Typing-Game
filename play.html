@@ -12,17 +12,26 @@
   <title>Time to Type</title>
 </head>
 
-<!-- Navbar -->
+<!-- Header -->
 
 <body class="text-white">
+  <header class="bg-light text-center p-3 mb-5">
+    <h1>Typing Training</h1>
+  </header>
   <div class="container text-center">
 
     <!-- Word & Input -->
     <div class="row bg-light">
       <div class="col-md-6 mx-auto">
         <p class="lead">Type The Given Word Within
-          <span class="text-danger" id="seconds">5</span> Seconds:</p>
-        <h2 class="display-2 mb-5" id="current-word"></h2>
+          <span class="text-easy" id="seconds">5</span> Seconds:</p>
+
+        <select id="difficulty" onchange="setDifficulty();">
+          <option value="0">Easy</option>
+          <option value="1">Medium</option>
+          <option value="2">Hard</option>
+        </select>
+        <h2 class="display-4 mb-5" id="current-word"></h2>
         <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus>
         <h4 class="mt-3" id="message"></h4>
 
@@ -34,7 +43,7 @@
             </h3>
           </div>
           <div class="col-md-3">
-            <button id="retry" class="btn bg-blue text-white">Replay</button>
+            <button id="retry" class="btn bg-blue">Replay</button>
           </div>
           <div class="col-md-3">
             <h3>Score:
@@ -47,9 +56,8 @@
         <div class="row mt-5">
           <div class="col-md-12">
             <div class="card card-body text-white bg-blue">
-              <h5>Instructions</h5>
               <p>Type each word in the given amount of seconds to score. We have given you a lot longer for your first
-                word so you can get in the zone.</p>
+                word so you can choose a difficulty and get in the zone.</p>
             </div>
           </div>
         </div>
