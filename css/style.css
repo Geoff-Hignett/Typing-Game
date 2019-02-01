@@ -1,3 +1,21 @@
+/* Element Selectors */
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+select {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Class Selectors */
+.bg-blue {
+  background-color: #1c92d2;
+}
 
 .bg-light {
   background: #000064;  /* old browsers fallback color*/
@@ -5,45 +23,35 @@
   background: linear-gradient(to top, #f2fcfe, #1c92d2);
 }
 
-.bg-blue {
-  background-color: #1c92d2;
-}
-
 .btn {
   color: #fff;
-}
-
-.text-easy {
-  color: #66FF00;
-}
-
-p {
-  font-size: 1.5rem;
-}
-
-
-
-.btn:hover {
-  background-color: #fff;
-  color: #1c92d2;
-}
-
-.img-control {
-  max-height: 350px;
 }
 
 .container {
   background-color: #000;
 }
 
-body {
-  font-family: 'Nunito', sans-serif;
+.img-control {
+  max-height: 350px;
 }
 
-select {
-  cursor: pointer;
-  margin-bottom: 10px;
+.text-easy {
+  color: #66FF00;
 }
+
+/* Pseudo Selectors */
+.btn:hover {
+  background-color: #fff;
+  color: #1c92d2;
+}
+
+
+
+
+
+
+
+
 
 
 
